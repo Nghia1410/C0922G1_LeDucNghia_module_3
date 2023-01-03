@@ -1,3 +1,5 @@
+package model;
+
 public class DisplayCustomer {
     private String name;
     private String dateOfBirth;
