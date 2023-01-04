@@ -7,10 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
+<head>
+    <title>Product</title>
+</head>
+<body>
 <h2><a href="/products">Hiển thị danh sách sản phẩm</a></h2>
-  </body>
+</body>
 </html>

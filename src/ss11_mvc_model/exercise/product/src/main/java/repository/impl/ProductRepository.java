@@ -17,7 +17,7 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public List<Product> display() {
-      return productList;
+        return productList;
     }
 
     @Override

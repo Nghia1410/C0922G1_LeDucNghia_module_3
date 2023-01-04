@@ -12,7 +12,7 @@ public class ProductService implements IProductService {
 
     @Override
     public List<Product> display() {
-        return productRepository.display() ;
+        return productRepository.display();
     }
 
     @Override
