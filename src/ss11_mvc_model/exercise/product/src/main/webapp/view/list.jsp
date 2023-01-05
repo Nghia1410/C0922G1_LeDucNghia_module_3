@@ -12,19 +12,20 @@
     <title>List</title>
 </head>
 <body>
+<h1>Hiển thị danh sách</h1>
+<h2><a href="/products?action=create">Thêm sản phẩm</a></h2>
+<h3>${mess}</h3>
 <fieldset>
     <legend style="background-color: red">Danh sách sản phẩm</legend>
     <table>
         <tr>
             <td>STT</td>
-            <td>ID</td>
             <td>NAME</td>
             <td>PRICE</td>
         </tr>
         <c:forEach var="Product" items="${productList}" varStatus="status">
             <tr>
                 <td>${status.count}</td>
-                <td>${Product.id}</td>
                 <td>${Product.name}</td>
                 <td>${Product.price}</td>
             </tr>

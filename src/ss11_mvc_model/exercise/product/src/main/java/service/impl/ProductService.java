@@ -16,7 +16,7 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void add(Product product) {
-
+    public boolean create(Product product) {
+        return productRepository.create(product);
     }
 }

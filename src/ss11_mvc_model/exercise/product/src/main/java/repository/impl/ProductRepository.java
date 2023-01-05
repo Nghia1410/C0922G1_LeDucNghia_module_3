@@ -21,7 +21,8 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public void add(Product product) {
+    public boolean create(Product product) {
 
+        return productList.add(product);
     }
 }

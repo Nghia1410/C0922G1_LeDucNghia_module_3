@@ -7,7 +7,7 @@ import java.util.List;
 public interface IProductRepository {
     List<Product> display();
 
-    void add(Product product);
+    boolean create(Product product);
 
 
 }
