@@ -9,5 +9,9 @@ public interface IUserService {
 
     boolean create(User user);
 
-    void remove(User user);
+    boolean delete(int id);
+
+    List<User>find(String countries);
+
+    List<User>sortByName();
 }

@@ -2,7 +2,6 @@ package repository;
 
 import model.User;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface IUserRepository {
@@ -10,5 +9,9 @@ public interface IUserRepository {
 
     boolean create(User user);
 
-    void remove(User user);
+   boolean delete(int id);
+
+   List<User>sortByName();
+
+    List<User> find(String country);
 }

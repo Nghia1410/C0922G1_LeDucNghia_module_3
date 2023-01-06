@@ -21,7 +21,17 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public void remove(User user) {
+    public boolean delete(int id) {
+        return userRepository.delete(id);
+    }
 
+    @Override
+    public List<User> find(String countries) {
+        return userRepository.find(countries);
+    }
+
+    @Override
+    public List<User> sortByName() {
+        return null;
     }
 }
