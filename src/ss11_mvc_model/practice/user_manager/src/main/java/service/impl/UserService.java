@@ -1,8 +1,9 @@
-package service;
+package service.impl;
 
 import model.User;
 import repository.IUserRepository;
-import repository.UserRepository;
+import repository.impl.UserRepository;
+import service.IUserService;
 
 import java.util.List;
 
@@ -15,8 +16,8 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public void add(User user) {
-
+    public boolean create(User user) {
+        return userRepository.create(user);
     }
 
     @Override

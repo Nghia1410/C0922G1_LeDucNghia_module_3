@@ -72,6 +72,7 @@ where
   );
   
 -- 19.  Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2020 lên gấp đôi.
+drop view if exists gia_cap_nhat;
 create view gia_cap_nhat as 
 select 
   dvdk.ma_dich_vu_di_kem, 
@@ -91,7 +92,7 @@ having
 select 
   * 
 from 
-  gia_cap_nhat;
+  gia_cap_nhat; 
   
 -- 20.  Hiển thị thông tin của tất cả các nhân viên và khách hàng có trong hệ thống, thông tin hiển thị bao gồm
 --  id (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.

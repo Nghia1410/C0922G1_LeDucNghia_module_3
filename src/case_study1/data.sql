@@ -58,8 +58,8 @@ INSERT INTO dich_vu (ma_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, so_nguoi_
 	('6', 'Room Twin 02', '3000', '900000', '2', 'normal', 'Có tivi', null, null, '1 Xe máy', '4', '3');
 INSERT INTO dich_vu_di_kem (ma_dich_vu_di_kem, ten_dich_vu_di_kem, gia, don_vi, trang_thai) VALUES
 	('1', 'Karaoke', '10000', 'giờ', 'tiện nghi, hiện tại'),
-	('2', 'Thuê xe máy', '10000', 'chiếc', 'hỏng 1 xe'),
-	('3', 'Thuê xe đạp', '20000', 'chiếc', 'tốt'),
+	('2', 'Thuê xe máy', '10000', 'chiếc, hỏng 1 xe'),
+	('3', 'Thuê xe đạp', '20000', 'chiếc, tốt'),
 	('4', 'Buffet buổi sáng', '15000', 'suất', 'đầy đủ đồ ăn, tráng miệng'),
 	('5', 'Buffet buổi trưa', '90000', 'suất', 'đầy đủ đồ ăn, tráng miệng'),
 	('6', 'Buffet buổi tối', '16000', 'suất', 'đầy đủ đồ ăn, tráng miệng');

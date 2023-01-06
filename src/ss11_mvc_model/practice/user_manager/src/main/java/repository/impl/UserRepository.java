@@ -1,28 +1,52 @@
-package repository;
+package repository.impl;
 
 import model.User;
+import repository.BaseRepository;
+import repository.IUserRepository;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepository implements IUserRepository {
-    private static List<User> users = new ArrayList<>();
-
-    static {
-        users.add(new User("nghĩa", "nghia1410@gmail.com", "đà nẵng"));
-        users.add(new User("tài", "tai1410@gmail.com", "huế"));
-        users.add(new User("định", "dinh1410@gmail.com", "quảng nam"));
-    }
+    private final String SELECT_ALL = "select*from users";
+    private final String INSERT_INTO = "insert into users(name,email,country) values(?,?,?)";
 
     @Override
     public List<User> display() {
+        List<User> users = new ArrayList<>();
+        Connection connection= BaseRepository.getConnectDB();
+        try {
+            PreparedStatement preparedStatement=connection.prepareStatement(SELECT_ALL);
+            ResultSet resultSet=preparedStatement.executeQuery();
+            while (resultSet.next()){
+                int id=resultSet.getInt("id");
+                String name=resultSet.getString("name");
+                String email=resultSet.getString("email");
+                String country=resultSet.getString("country");
+                User user=new User(id,name,email,country);
+                users.add(user);
+            }
+            connection.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         return users;
+
     }
-
     @Override
-    public void add(User user) {
-
+    public boolean create(User user) {
+        Connection connection= BaseRepository.getConnectDB();
+        try {
+            PreparedStatement  preparedStatement = connection.prepareStatement(INSERT_INTO);
+            preparedStatement.setString(1, user.getName());
+            preparedStatement.setString(2, user.getEmail());
+            preparedStatement.setString(3, user.getCountry());
+            return preparedStatement.executeUpdate() >1;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return  false;
     }
 
     @Override

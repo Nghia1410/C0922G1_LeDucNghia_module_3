@@ -8,9 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>create</title>
 </head>
 <body>
-$END$
+<form action="users?action=create" method="post">
+    <input type="text" name="name" placeholder="nhập tên">
+    <input type="text" name="email" placeholder="nhập email">
+    <input type="text" name="country" placeholder="nhập địa chỉ">
+    <button type="submit">SAVE</button>
+</form>
 </body>
 </html>

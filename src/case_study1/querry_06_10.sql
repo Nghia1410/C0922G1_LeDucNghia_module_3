@@ -100,7 +100,9 @@ from
 group by 
   hd.ma_hop_dong 
 order by 
-  hd.ma_hop_dong
+  hd.ma_hop_dong;
+
+
 
 
 
