@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepository implements IUserRepository {
-    private final String SELECT_ALL = "select*from users";
+    private final String SELECT_ALL ="call select_all()";
     private final String INSERT_INTO = "insert into users(name,email,country) values(?,?,?)";
     private final String SEARCH_BY_COUNTRY = "select*from users where country like ?;";
-    private final String DELETE_USER = "delete from users where id = ?;";
+    private final String DELETE_USER = "call delete_user ;";
     private final String SQL_SAFE_UPDATES = "set sql_safe_updates = 0;";
     private final String FOREIGN_KEY_CHECKS = "set foreign_key_checks = 0;";
 
@@ -71,6 +71,7 @@ public class UserRepository implements IUserRepository {
         return false;
     }
 
+
     @Override
     public List<User> findByCountry(String countries) {
         Connection connection = BaseRepository.getConnectDB();
@@ -100,5 +101,10 @@ public class UserRepository implements IUserRepository {
     @Override
     public void insertUserStore(User user) throws SQLException {
 
+    }
+
+    @Override
+    public boolean updateUser(User user) {
+        return false;
     }
 }

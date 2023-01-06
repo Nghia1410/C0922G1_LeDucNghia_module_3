@@ -18,4 +18,5 @@ public interface IUserRepository {
 
     void insertUserStore(User user) throws SQLException;
 
+    boolean updateUser(User user);
 }
