@@ -1,93 +1,59 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Admin
-  Date: 1/5/2023
-  Time: 9:23 PM
+  User: OS
+  Date: 12/20/2022
+  Time: 3:42 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>$Furama$</title>
+    <meta charset="UTF-8">
+    <title>Furama</title>
     <link rel="stylesheet" href="../bootstrap-5.1.3-dist\css\bootstrap.css">
-
+    <%--    <link rel="stylesheet" href="../bootstrap-5.1.3-dist\css\styleWeb.css">--%>
 </head>
-<body >
-<div class="container-fluid">
-    <div>
-<div class="row ">
-<div class="row" style="background-color: #0dcaf0;height: 80px">
-    <div class="col-9">logo</div>
-    <div class="col-3">Lê Đức Nghĩa</div>
-</div>
-<div class="row">
-<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #20c997">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                </li>
-            </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
 
-</nav>
-</div>
-</div>
 
+<%--  <c:redirect url="/view/customer/listCustomer.jsp"></c:redirect>--%>
+
+<%--header--%>
+<c:import url="view/include/header.jsp"></c:import>
 
 <%--body--%>
-<div class="row vh-100">
-    <div class="col-4" style="background-color: #0b5ed7">Item one<br>Item Two <br> Item Three</div>
-    <div class="col-8">BODY</div>
-</div>
-<%--end Body--%>
 
-
-
-
-<%--FOOTER--%>
-<div class="row">
-
-
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-        © 2021 Copyright:
-        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="height: 800px">
+            <img src="picture/Vietnam_Danang_Furama_Resort_Exterior-Furama-girl-with-pink-hat.jpg" class="d-block w-100 h-100" alt="...">
+        </div>
+        <div class="carousel-item" style="height: 800px">
+            <img src="picture/DES-DANANG.jpg" class="d-block w-100 h-100" alt="...">
+        </div>
+        <div class="carousel-item" style="height: 800px">
+            <img src="picture/06-2.jpg" class="d-block w-100 h-100"
+                 alt="...">
+        </div>
     </div>
-
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
-<!-- Footer -->
 
-</div>
+
+<%--    footer --%>
+
+<c:import url="view/include/footer.jsp"></c:import>
+
+
+
+<%--<script src="../bootstrap-5.1.3-dist\js\styleWeb.js"></script>--%>
 
 <script src="../bootstrap-5.1.3-dist\js\bootstrap.js"></script>
 </body>
