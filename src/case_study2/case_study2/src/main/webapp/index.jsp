@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Furama</title>
+    <title>Home</title>
     <link rel="stylesheet" href="../bootstrap-5.1.3-dist\css\bootstrap.css">
     <%--    <link rel="stylesheet" href="../bootstrap-5.1.3-dist\css\styleWeb.css">--%>
 </head>

@@ -50,6 +50,7 @@
         <th>Division</th>
         <th>Position</th>
         <th>Education Degree</th>
+        <th>User Name</th>
         <th>Edit</th>
         <th>Delete</th>
 
@@ -69,6 +70,7 @@
             <td>${employee.division.name}</td>
             <td>${employee.position.name}</td>
             <td>${employee.educationDegree.name}</td>
+            <td>${employee.userName}</td>
 
             <td>
                 1
@@ -207,31 +209,6 @@
         </div>
     </div>
 </div>
-
-<script>
-    // function infoDelete(id, name) {
-    //     document.getElementById("deleteId").value = id;
-    //     document.getElementById("deleteName").innerText = name;
-    // }
-    //
-    // function infoEdit(id, customer_type_id, name, date_of_birth, id_card, phone_number, email, address, gender) {
-    //     document.getElementById("idEdit").value = id;
-    //     document.getElementById("customerTypeId").value = customer_type_id;
-    //     document.getElementById("nameEdit").value = name;
-    //     document.getElementById("dateEdit").value = date_of_birth;
-    //     document.getElementById("idCardEdit").value = id_card;
-    //     document.getElementById("phoneNumberEdit").value = phone_number;
-    //     document.getElementById("emailEdit").value = email;
-    //     document.getElementById("addressEdit").value = address;
-    //     if (gender === "true") {
-    //         document.getElementById("male").checked = true;
-    //         document.getElementById("female").checked = false;
-    //     } else {
-    //         document.getElementById("male").checked = false;
-    //         document.getElementById("female").checked = true;
-    //     }
-    // }
-</script>
 
 <%-- file  bootstrap javascript--%>
 <script src="../../bootstrap-5.1.3-dist/js/bootstrap.js"></script>

@@ -1,19 +1,20 @@
 package model.employee;
 
 public class Employee {
-    private int id ;
-    private String name ;
-    private String dateOfBirth ;
-    private String idCard ;
-    private String salary ;
-    private String phoneNumber ;
-    private String email ;
-    private String address ;
-    private Division division ;
-    private  Position position ;
+    private int id;
+    private String name;
+    private String dateOfBirth;
+    private String idCard;
+    private String salary;
+    private String phoneNumber;
+    private String email;
+    private String address;
+    private Division division;
+    private Position position;
     private EducationDegree educationDegree;
+    private String userName;
 
-    public Employee(int id, String name, String dateOfBirth, String idCard, String salary, String phoneNumber, String email, String address, Division division, Position position, EducationDegree educationDegree) {
+    public Employee(int id, String name, String dateOfBirth, String idCard, String salary, String phoneNumber, String email, String address, Division division, Position position, EducationDegree educationDegree, String userName) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -25,6 +26,15 @@ public class Employee {
         this.division = division;
         this.position = position;
         this.educationDegree = educationDegree;
+        this.userName = userName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public int getId() {
@@ -114,4 +124,5 @@ public class Employee {
     public void setEducationDegree(EducationDegree educationDegree) {
         this.educationDegree = educationDegree;
     }
+
 }

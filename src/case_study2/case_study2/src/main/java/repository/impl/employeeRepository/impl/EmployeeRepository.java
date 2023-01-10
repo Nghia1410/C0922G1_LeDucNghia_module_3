@@ -16,13 +16,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeRepository implements IEmployeeRepository {
-    BaseRepository baseRepository = new BaseRepository();
     private final static String SELECT_ALL_EMPLOYEE = "select e.*,d.name as division,ed.name as education_degree,p.name as position from employee e  join division d on e.division_id= d.id  join education_degree ed on ed.id=e.education_degree_id  join position p on p.id=e.position_id ;";
 
     @Override
     public List<Employee> displayEmployee() {
         List<Employee> employeeList = new ArrayList<>();
-        Connection connection = baseRepository.getConnection();
+        Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_EMPLOYEE);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -41,18 +40,16 @@ public class EmployeeRepository implements IEmployeeRepository {
                 String divisionName = resultSet.getString("division");
                 String positionName = resultSet.getString("position1");
                 String educationDegreeName = resultSet.getString("education_degree");
-
                 Division division = new Division(divisionId, divisionName);
                 Position position = new Position(positionId, positionName);
                 EducationDegree educationDegree = new EducationDegree(educationDegreeId, educationDegreeName);
+                String userName = resultSet.getString("username");
 
-                employeeList.add(new Employee(id, name, dateOfBirth, idCard, salary, phoneNumber, email, address, division, position, educationDegree));
+                employeeList.add(new Employee(id, name, dateOfBirth, idCard, salary, phoneNumber, email, address, division, position, educationDegree, userName));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
-
         return employeeList;
     }
 }

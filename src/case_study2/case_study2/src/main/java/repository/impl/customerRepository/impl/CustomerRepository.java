@@ -14,12 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerRepository implements ICustomerRepository {
-    BaseRepository baseRepository = new BaseRepository();
     private final static String SELECT_ALL_CUSTOMER = "select c.*,ct.name as customer_type_name from customer c join customer_type ct on c.customer_type_id=ct.id ;";
     @Override
     public List<Customer> displayCustomer() {
         List<Customer> customerList = new ArrayList<>();
-        Connection connection = baseRepository.getConnection();
+        Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_CUSTOMER);
             ResultSet resultSet = preparedStatement.executeQuery();

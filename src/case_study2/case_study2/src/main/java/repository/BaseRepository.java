@@ -5,19 +5,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class BaseRepository {
-    private final String URL = "jdbc:mysql://localhost:3306/furama_web";
-    private final String USERNAME = "root";
-    private final String PASSWORD = "14102003";
-
-    public Connection getConnection() {
+    private static final String URL ="jdbc:mysql://localhost:3306/furama_web"; // sửa lại tên của csdl
+    private static final String USER ="root";// mặc định của mysql
+    private static final String PASS ="14102003";// do cài đặt khi cài đặt mysql
+    public static Connection getConnection(){
         Connection connection = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-        } catch (ClassNotFoundException | SQLException e) {
+            connection= DriverManager.getConnection(URL,USER,PASS);
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
         return connection;
     }
-
 }
